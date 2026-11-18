@@ -13,7 +13,7 @@
     "db:migrate:prod": "wrangler d1 migrations apply ieadpg-db --remote"
   },
   "dependencies": {
-    "drizzle-orm": "^0.38.4",
+    "drizzle-orm": "^0.45.2",
     "hono": "^4.7.2",
     "jose": "^5.9.6"
   },
