@@ -1,0 +1,26 @@
+{
+  "name": "ieadpg-d1",
+  "version": "1.0.0",
+  "description": "API & Portal do Membro da IEADPG Jardim Amália (Cloudflare Workers, Hono, D1, Drizzle ORM, KV, Queues)",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply ieadpg-db --local",
+    "db:migrate:prod": "wrangler d1 migrations apply ieadpg-db --remote"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.38.4",
+    "hono": "^4.7.2",
+    "jose": "^5.9.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "drizzle-kit": "^0.30.4",
+    "typescript": "^5.7.3",
+    "wrangler": "^3.111.0"
+  }
+}

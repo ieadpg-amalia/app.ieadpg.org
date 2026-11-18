@@ -1,0 +1,54 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ieadpg-d1",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    {
+      "pattern": "app.ieadpg.org",
+      "custom_domain": true
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ieadpg-db",
+      "database_id": "8a75daec-05bd-4b6f-9760-eebef017d218"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "OTP_KV",
+      "id": "cb4b28aee9884429a820dddfc04b2981"
+    }
+  ],
+  "queues": {
+    "producers": [
+      {
+        "binding": "WHATSAPP_QUEUE",
+        "queue": "ieadpg-whatsapp-queue"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "ieadpg-whatsapp-queue",
+        "max_batch_size": 10,
+        "max_wait_time_ms": 5000,
+        "max_retries": 3,
+        "retry_delay": 0
+      }
+    ]
+  },
+  "vars": {
+    "WHATSAPP_GATEWAY_URL": "https://mail.ieadpg.org/whatsapp"
+  },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
