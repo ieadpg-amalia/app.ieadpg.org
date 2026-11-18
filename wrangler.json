@@ -34,9 +34,8 @@
       {
         "queue": "ieadpg-whatsapp-queue",
         "max_batch_size": 10,
-        "max_wait_time_ms": 5000,
-        "max_retries": 3,
-        "retry_delay": 0
+        "max_batch_timeout": 5,
+        "max_retries": 3
       }
     ]
   },
