@@ -4,18 +4,23 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-10-27",
   "compatibility_flags": ["nodejs_compat"],
-  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "app.ieadpg.org",
+      "custom_domain": true
+    }
+  ],
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "ieadpg-db",
-      "database_id": "359e34dc-a34b-4148-8f30-c44d679f3247"
+      "database_id": "8a75daec-05bd-4b6f-9760-eebef017d218"
     }
   ],
   "kv_namespaces": [
     {
       "binding": "OTP_KV",
-      "id": "a42667d43a94407baf83582b93379eb7"
+      "id": "cb4b28aee9884429a820dddfc04b2981"
     }
   ],
   "queues": {
